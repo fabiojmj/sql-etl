@@ -1,0 +1,5 @@
+﻿1|Gabrielly|Pereira|Rua Medeiros 1680||SP|14810-099
+2|Nicolash|Fernandes|Trecho STRC Trecho|Guará|DF|71225-533
+3|Leonardo||Rua João da Silva|Itaguaí|RJ|23820-350
+4|Julia|Fernandes|Rua da Ladeira|São Lourenço da Mata|PE|54720-711
+5|Laura|Araujo|Rua José Bibiano da Silva|Presidente|SP|19065-740

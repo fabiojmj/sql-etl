@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/23/2020 11:32:20 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-TFBVH23"
+  DTS:CreatorName="DESKTOP-TFBVH23\fabio"
+  DTS:DTSID="{A87871F5-71DF-40D9-8B72-82FB91D9FD01}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{396386C4-4184-4839-BBE2-7E2CCBEA9D21}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\sqlexpress.PRJ_INTEGRATION]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1537A2C0-E195-4867-948B-CBB456A42C0C}"
+      DTS:ObjectName="localhost\sqlexpress.PRJ_INTEGRATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\sqlexpress;Initial Catalog=PRJ_INTEGRATION;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WR_FFC_CLIENTES]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Conector do arquivo de clientes"
+      DTS:DTSID="{7A773647-9F6B-45E6-B1C0-40E429C16D1C}"
+      DTS:ObjectName="WR_FFC_CLIENTES">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\fabio\Cursos\ETL\Dados\Clientes.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IDCLIENTE"
+              DTS:DTSID="{C88406C8-4BDE-4CE2-9041-05ADD1306142}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NOME"
+              DTS:DTSID="{E8EFA9D5-1AFF-4DF2-B0B3-5B889090D5CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EMAIL"
+              DTS:DTSID="{5B495FDC-B45A-4C9E-8C00-FFCBD8058AE7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF_CLIENTES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{1FB68884-DE3D-4126-97B7-296DC5EA32DC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF_CLIENTES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF_CLIENTES\FF_CLIENTE"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de Arquivo Simples"
+              localeId="1046"
+              name="FF_CLIENTE"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica se os dados substituirão o arquivo de destino ou serão anexados a ele."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica o texto a ser gravado no arquivo de destino antes da gravação de quaisquer dados."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando o qualificador de texto está habilitado, ele especifica se o qualificador de texto nos dados gravados no arquivo de destino serão de saída ou não."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CLIENTES\FF_CLIENTE.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WR_FFC_CLIENTES]"
+                  connectionManagerRefId="Package.ConnectionManagers[WR_FFC_CLIENTES]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples]"
+                  hasSideEffects="true"
+                  name="Entrada de Destino de Arquivo Simples">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].Columns[IDCLIENTE]"
+                      cachedDataType="i4"
+                      cachedName="IDCLIENTE"
+                      externalMetadataColumnId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[IDCLIENTE]"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]" />
+                    <inputColumn
+                      refId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].Columns[NOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="NOME"
+                      externalMetadataColumnId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[NOME]"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[NOME]" />
+                    <inputColumn
+                      refId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].Columns[EMAIL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EMAIL"
+                      externalMetadataColumnId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[EMAIL]"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[EMAIL]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[IDCLIENTE]"
+                      dataType="i4"
+                      name="IDCLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EMAIL" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\DF_CLIENTES\TB_CLIENTES"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="TB_CLIENTES"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[CLIENTES]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CLIENTES\TB_CLIENTES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.PRJ_INTEGRATION]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.PRJ_INTEGRATION]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[IDCLIENTE]"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]"
+                      name="IDCLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                      length="30"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                      name="NOME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[SEXO]"
+                      length="1"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[SEXO]"
+                      name="SEXO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL]"
+                      length="50"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].Columns[EMAIL]"
+                      name="EMAIL"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[IDCLIENTE]"
+                      dataType="i4"
+                      name="IDCLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEXO" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EMAIL" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[IDCLIENTE]"
+                      dataType="i4"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[IDCLIENTE]"
+                      name="IDCLIENTE" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                      name="NOME" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[SEXO]"
+                      name="SEXO" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL]"
+                      name="EMAIL" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF_CLIENTES.Paths[Saída de Origem OLE DB]"
+              endId="Package\DF_CLIENTES\FF_CLIENTE.Inputs[Entrada de Destino de Arquivo Simples]"
+              name="Saída de Origem OLE DB"
+              startId="Package\DF_CLIENTES\TB_CLIENTES.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DF_CLIENTES"
+          TopLeft="48,56" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF_CLIENTES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\DF_CLIENTES\TB_CLIENTES"
+          TopLeft="99,56" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\DF_CLIENTES\FF_CLIENTE"
+          TopLeft="384,56" />
+        <EdgeLayout
+          Id="Package\DF_CLIENTES.Paths[Saída de Origem OLE DB]"
+          TopLeft="252,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132,0"
+              Start="0,0"
+              End="124.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="124.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_CLIENTES\TB_CLIENTES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

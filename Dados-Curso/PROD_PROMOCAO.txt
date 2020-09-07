@@ -1,0 +1,5 @@
+"Produto","Categoria","Valor","Promocao"
+"IPad 3","Eletronicos","2000.00","S"
+"Playstation 4","Eletronicos","1300.00","S"
+"Faqueiro 120 pcs","Cama, mesa e banho","520.00","S"
+"Camera Digital","Eletronicos","300.00","S"

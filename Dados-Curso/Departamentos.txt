@@ -1,0 +1,7 @@
+"deDepartamento","comissao"
+"Ferramentas","5"
+"Eletrodomésticos","6"
+"Cama, Mesa e Banho","2"
+"Utilidades Domésticas","5"
+"Eletrodomésticos","3"
+"Móveis","5"
