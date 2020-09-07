@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{A713228E-14E1-4B1E-8F01-DC88C7EA2981}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{47A47E8A-B132-474E-A4AA-5120B878B0D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,11 +27,10 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[RD_Produtos]"
+      DTS:refId="Package.ConnectionManagers[RD_PRODUTO]"
       DTS:CreationName="FLATFILE"
-      DTS:Description="Connector de arquivos produtos"
-      DTS:DTSID="{FD1DE35D-7422-4616-B282-807C474427BC}"
-      DTS:ObjectName="RD_Produtos">
+      DTS:DTSID="{23760C7C-67FE-4EE6-A4DC-7623238E1293}"
+      DTS:ObjectName="RD_PRODUTO">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -41,7 +40,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\fabio\Cursos\ETL\Dados-Curso\Produtos.txt">
+          DTS:ConnectionString="C:\Users\fabio\Cursos\ETL\Dados-Curso\PROD_PROMOCAO.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,8 +48,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="deProduto"
-              DTS:DTSID="{0B3FD4D9-FCE0-4966-BF5A-B9E3878CD11A}"
+              DTS:ObjectName="Produto"
+              DTS:DTSID="{7EA839EE-918E-4F65-B119-2ADF196F549B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,8 +57,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="vlrPrecoCusto"
-              DTS:DTSID="{E25ACAA6-EE5A-46AA-B17A-29CB3DF3DB8A}"
+              DTS:ObjectName="Categoria"
+              DTS:DTSID="{BE20A029-10F1-43A2-A803-3695D5EEB707}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,8 +66,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="deDepartamento"
-              DTS:DTSID="{88FC51C1-776C-48A7-9560-173BF4F81A77}"
+              DTS:ObjectName="Valor"
+              DTS:DTSID="{91ECDC34-45BA-487E-8EEB-9E40CE7387B5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,8 +75,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="acervo"
-              DTS:DTSID="{31CB3B2D-EAC7-423F-B5D5-5003A1786FF0}"
+              DTS:ObjectName="Promocao"
+              DTS:DTSID="{8930C0D0-DB8E-4CCE-81EE-519E870E1240}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -122,8 +121,8 @@
               <connections>
                 <connection
                   refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[RD_Produtos]"
-                  connectionManagerRefId="Package.ConnectionManagers[RD_Produtos]"
+                  connectionManagerID="Package.ConnectionManagers[RD_PRODUTO]"
+                  connectionManagerRefId="Package.ConnectionManagers[RD_PRODUTO]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -132,15 +131,15 @@
                   name="Saída de Origem de Arquivo Simples">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[deProduto]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Produto]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversão"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[deProduto]"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Produto]"
                       length="50"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[deProduto]"
-                      name="deProduto"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Produto]"
+                      name="Produto"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -154,15 +153,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[vlrPrecoCusto]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Categoria]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversão"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[vlrPrecoCusto]"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Categoria]"
                       length="50"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[vlrPrecoCusto]"
-                      name="vlrPrecoCusto"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Categoria]"
+                      name="Categoria"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -176,15 +175,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[deDepartamento]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Valor]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversão"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[deDepartamento]"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Valor]"
                       length="50"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[deDepartamento]"
-                      name="deDepartamento"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Valor]"
+                      name="Valor"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -198,15 +197,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[acervo]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Promocao]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversão"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[acervo]"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Promocao]"
                       length="50"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[acervo]"
-                      name="acervo"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Promocao]"
+                      name="Promocao"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -223,29 +222,29 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[deProduto]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Produto]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="deProduto" />
+                      name="Produto" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[vlrPrecoCusto]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Categoria]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="vlrPrecoCusto" />
+                      name="Categoria" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[deDepartamento]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Valor]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="deDepartamento" />
+                      name="Valor" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[acervo]"
+                      refId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Promocao]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="acervo" />
+                      name="Promocao" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -278,11 +277,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION"
+              refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
               description="Destino OLE DB"
-              name="PPJ_INTEGRATION"
+              name="PRJ_INTEGRATION"
               usesDispositions="true"
               version="4">
               <properties>
@@ -315,7 +314,7 @@
                   dataType="System.Int32"
                   description="Especifica o modo usado para acessar o banco de dados."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
@@ -335,7 +334,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Connections[OleDbConnection]"
+                  refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.PRJ_INTEGRATION]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.PRJ_INTEGRATION]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
@@ -343,92 +342,92 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB]"
+                  refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB]"
                   errorOrTruncationOperation="Inserir"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de Destino OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[deProduto]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[Produto]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="deProduto"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[deProduto]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[deProduto]" />
+                      cachedName="Produto"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Produto]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Produto]" />
                     <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[vlrPrecoCusto]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[Categoria]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="vlrPrecoCusto"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[vlrPrecoCusto]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[vlrPrecoCusto]" />
+                      cachedName="Categoria"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Categoria]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Categoria]" />
                     <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[deDepartamento]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[Valor]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="deDepartamento"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[deDepartamento]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[deDepartamento]" />
+                      cachedName="Valor"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Valor]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Valor]" />
                     <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[acervo]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].Columns[Promocao]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="acervo"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[acervo]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[acervo]" />
+                      cachedName="Promocao"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Promocao]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[Promocao]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[deProduto]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Produto]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="deProduto" />
+                      name="Produto" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[vlrPrecoCusto]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Categoria]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="vlrPrecoCusto" />
+                      name="Categoria" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[deDepartamento]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Valor]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="deDepartamento" />
+                      name="Valor" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[acervo]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB].ExternalColumns[Promocao]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="acervo" />
+                      name="Promocao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB]"
+                  refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Saída de Erro de Destino OLE DB"
-                  synchronousInputId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB]">
+                  synchronousInputId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -440,7 +439,7 @@
           <paths>
             <path
               refId="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem de Arquivo Simples]"
-              endId="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION.Inputs[Entrada de Destino OLE DB]"
+              endId="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION.Inputs[Entrada de Destino OLE DB]"
               name="Saída de Origem de Arquivo Simples"
               startId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples]" />
           </paths>
@@ -473,27 +472,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="181,42"
+          Id="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION"
+          TopLeft="369,82" />
+        <NodeLayout
           Size="213,42"
           Id="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples"
           TopLeft="69,81" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION"
-          TopLeft="360,84" />
         <EdgeLayout
           Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem de Arquivo Simples]"
-          TopLeft="282,103.5">
+          TopLeft="282,102.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78,0"
+              EndConnector="87,0"
               Start="0,0"
-              End="70.5,0">
+              End="79.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="70.5,0" />
+                    End="79.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -506,7 +505,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarefa Fluxo de Dados\PPJ_INTEGRATION">
+    design-time-name="Package\Tarefa Fluxo de Dados\PRJ_INTEGRATION">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
