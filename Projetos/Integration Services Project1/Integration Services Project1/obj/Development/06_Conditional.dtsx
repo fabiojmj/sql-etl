@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="06_Conditional"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{70F30AE7-D731-4F1D-B94F-EE298334D0DA}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{6F5CA3A4-E0C9-4B07-919B-89914A0A861D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -695,29 +695,73 @@
     design-time-name="Package\Tarefa Fluxo de Dados">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Tarefa Fluxo de Dados\Origem OLE DB"
-          TopLeft="104,114" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
           Size="176,42"
           Id="Package\Tarefa Fluxo de Dados\Divisão Condicional"
-          TopLeft="342,113" />
+          TopLeft="231.5,107.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Tarefa Fluxo de Dados\Destino OLE DB"
+          TopLeft="240,210" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Tarefa Fluxo de Dados\Origem OLE DB"
+          TopLeft="240.5,5.49999999999989" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Tarefa Fluxo de Dados\PRO_PROMOCAO"
+          TopLeft="5.5,210" />
         <EdgeLayout
-          Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
-          TopLeft="262,134.5">
+          Id="Package\Tarefa Fluxo de Dados.Paths[S_PROMOCAO]"
+          TopLeft="291.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="80,0"
+              EndConnector="-199,60.5000000000001"
               Start="0,0"
-              End="72.5,0">
+              End="-199,53.0000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="72.5,0" />
+                    End="0,20.5270270270271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5270270270271"
+                    Point2="0,24.5270270270271"
+                    Point3="-4,24.5270270270271" />
+                  <mssgle:LineSegment
+                    End="-195,24.5270270270271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-195,24.5270270270271"
+                    Point2="-199,24.5270270270271"
+                    Point3="-199,28.5270270270271" />
+                  <mssgle:LineSegment
+                    End="-199,53.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-132.0034765625,29.5270270270271,65.006953125,10.88671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+          TopLeft="319.5,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -726,67 +770,67 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Tarefa Fluxo de Dados\PRO_PROMOCAO"
-          TopLeft="600,114" />
-        <EdgeLayout
-          Id="Package\Tarefa Fluxo de Dados.Paths[S_PROMOCAO]"
-          TopLeft="518,134.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="82,0"
-              Start="0,0"
-              End="74.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="74.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="4.7465234375,5,65.006953125,10.88671875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Tarefa Fluxo de Dados\Destino OLE DB"
-          TopLeft="347,244" />
         <EdgeLayout
           Id="Package\Tarefa Fluxo de Dados.Paths[N_PROMOCAO]"
-          TopLeft="428.25,155">
+          TopLeft="347.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89"
+              EndConnector="-28,60.5"
               Start="0,0"
-              End="0,81.5">
+              End="-28,53">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.5" />
+                    End="0,20.527027027027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.527027027027"
+                    Point2="0,24.527027027027"
+                    Point3="-4,24.527027027027" />
+                  <mssgle:LineSegment
+                    End="-24,24.527027027027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24,24.527027027027"
+                    Point2="-28,24.527027027027"
+                    Point3="-28,28.527027027027" />
+                  <mssgle:LineSegment
+                    End="-28,53" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.8728125,35.306640625,65.745625,10.88671875"
+              BoundingBox="-46.8728125,29.527027027027,65.745625,10.88671875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="OBJETIVO: Criar uma lista de produtos promocionais&#xD;&#xA;&#xD;&#xA;Pacote: Conditional Split&#xD;&#xA;&#xD;&#xA;Execução: Lê da base de dados, faz um split pela &#xD;&#xA;coluna promoção e cria um TXT com produtos da promoção&#xD;&#xA;e uma tabela com os produtos que nao participaram da promoção.&#xD;&#xA;&#xD;&#xA;Conectores: PRJINTEGRATION e WRT_PROD"
+          ParentId="96d5b8e5-42b3-4f4d-95f8-29d5f69509e0"
+          FontInfo="{assembly:Null}"
+          Size="384,168"
+          Id="ea554c18-0b11-43df-b581-e0f4db23a21d"
+          TopLeft="5.5,5.5" />
+        <GroupLayout
+          Text="Documentação do Pacote"
+          ParentId="Package\Tarefa Fluxo de Dados"
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="394,228"
+          Size="394,43"
+          Id="96d5b8e5-42b3-4f4d-95f8-29d5f69509e0"
+          TopLeft="459.5,209.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>ea554c18-0b11-43df-b581-e0f4db23a21d</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarefa Fluxo de Dados\Origem OLE DB">
+    design-time-name="Package\Tarefa Fluxo de Dados\Destino OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -799,7 +843,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarefa Fluxo de Dados\Destino OLE DB">
+    design-time-name="Package\Tarefa Fluxo de Dados\Origem OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

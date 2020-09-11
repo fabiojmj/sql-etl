@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="06_Conditional"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{725DE813-E6EC-468C-84BC-A96C80DDB3E7}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{6F5CA3A4-E0C9-4B07-919B-89914A0A861D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Integration Services Project1</Name>
-    <LastWriteTime>2020-09-07T23:35:17.4393464Z</LastWriteTime>
+    <LastWriteTime>2020-09-10T11:08:05.416809Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -33,7 +33,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>06_Conditional.dtsx</Name>
-      <LastWriteTime>2020-09-07T23:36:51.0747644Z</LastWriteTime>
+      <LastWriteTime>2020-09-08T11:17:44.7934281Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>07_Excel.dtsx</Name>
+      <LastWriteTime>2020-09-09T11:21:25.7220268Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>08_Pacote_Excel.dtsx</Name>
+      <LastWriteTime>2020-09-10T11:08:05.2400327Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
