@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="09_CSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{876E300C-BFED-475B-B1FB-A11FAD0F4E9E}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{86470090-E94E-4D61-91C7-0005DBA859C1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -493,15 +493,19 @@
     design-time-name="Package\Tarefa Fluxo de Dados">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
-          Size="153,42"
-          Id="Package\Tarefa Fluxo de Dados\ALUNOS_CSV"
-          TopLeft="55,53" />
+          Size="173,42"
+          Id="Package\Tarefa Fluxo de Dados\TB_ALUNOS_CSV"
+          TopLeft="275,148" />
         <NodeLayout
           Size="180,42"
           Id="Package\Tarefa Fluxo de Dados\NOME_COMPLETO"
           TopLeft="284,55" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Tarefa Fluxo de Dados\ALUNOS_CSV"
+          TopLeft="55,53" />
         <EdgeLayout
           Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem de Arquivo Simples]"
           TopLeft="208,75">
@@ -524,10 +528,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Tarefa Fluxo de Dados\TB_ALUNOS_CSV"
-          TopLeft="275,148" />
         <EdgeLayout
           Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Coluna Derivada]"
           TopLeft="374,97">
@@ -562,6 +562,26 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Pacote responsavel em ler do arquivos CSV, concatenar&#xD;&#xA;nome e sobrenome e salva-los no banco de dados"
+          ParentId="c61239bd-958a-414a-9de2-ea1781cbef17"
+          FontInfo="{assembly:Null}"
+          Size="321,56"
+          Id="4e6b43be-5904-4f24-ab13-b6908ef8336b"
+          TopLeft="5.5,5.5" />
+        <GroupLayout
+          Text="Descrição"
+          ParentId="Package\Tarefa Fluxo de Dados"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="332,116"
+          Size="332,160"
+          Id="c61239bd-958a-414a-9de2-ea1781cbef17"
+          TopLeft="44.5,263.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>4e6b43be-5904-4f24-ab13-b6908ef8336b</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
