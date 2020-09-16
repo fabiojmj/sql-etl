@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="10_Excel e Transform"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{43A5BE95-41CA-41B2-9AA9-D413AB14B83D}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{842BDE02-13A3-4E2A-9D58-3381705FA2BA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -322,95 +322,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarefa Fluxo de Dados\Divisão Condicional"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Divisão Condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
-              description="Encaminha colunas de dados para saídas diferentes, dependendo do conteúdo dos dados. Use condições (expressões do SSIS) para especificar quais linhas são encaminhadas. Por exemplo, separe os registros que precisam ser limpos daqueles que estão prontos para serem carregados ou encaminhe somente um subconjunto de registros."
-              name="Divisão Condicional"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Inputs[Entrada de Divisão Condicional]"
-                  description="Entrada para a Transformação Divisão Condicional"
-                  name="Entrada de Divisão Condicional">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Inputs[Entrada de Divisão Condicional].Columns[TotalChildren]"
-                      cachedDataType="r8"
-                      cachedName="TotalChildren"
-                      lineageId="Package\Tarefa Fluxo de Dados\PLANILHA_CUSTOMERS.Outputs[Saída de Origem do Excel].Columns[TotalChildren]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[TOTAL_FILHOS]"
-                  description="Saída 1 da Transformação Divisão Condicional"
-                  errorOrTruncationOperation="Computação"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="TOTAL_FILHOS"
-                  synchronousInputId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Inputs[Entrada de Divisão Condicional]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                      name="Expression">#{Package\Tarefa Fluxo de Dados\PLANILHA_CUSTOMERS.Outputs[Saída de Origem do Excel].Columns[TotalChildren]} &lt;= 2</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
-                      expressionType="Notify"
-                      name="FriendlyExpression">TotalChildren &lt;= 2</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[MAIOR_DE_2_FILHOS]"
-                  description="Saída Padrão da Transformação Divisão Condicional"
-                  exclusionGroup="1"
-                  name="MAIOR_DE_2_FILHOS"
-                  synchronousInputId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Inputs[Entrada de Divisão Condicional]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[Saída de Erro de Divisão Condicional]"
-                  description="Saída de Erro da Transformação Divisão Condicional"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Saída de Erro de Divisão Condicional"
-                  synchronousInputId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Inputs[Entrada de Divisão Condicional]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Tarefa Fluxo de Dados\PLANILHA_CUSTOMERS"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
@@ -437,7 +348,8 @@
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select firstname + ' ' + lastname as NOME_COMPLETO,
 MaritalStatus, Gender, TotalChildren
-from [Customers$]</property>
+from [Customers$]
+where TotalChildren &lt;=2</property>
                 <property
                   dataType="System.String"
                   description="A variável que contém o comando SQL a ser executado."
@@ -582,14 +494,9 @@ from [Customers$]</property>
               startId="Package\Tarefa Fluxo de Dados\COLUNAS.Outputs[Saída de Coluna Derivada]" />
             <path
               refId="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem do Excel]"
-              endId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Inputs[Entrada de Divisão Condicional]"
+              endId="Package\Tarefa Fluxo de Dados\COLUNAS.Inputs[Entrada de Coluna Derivada]"
               name="Saída de Origem do Excel"
               startId="Package\Tarefa Fluxo de Dados\PLANILHA_CUSTOMERS.Outputs[Saída de Origem do Excel]" />
-            <path
-              refId="Package\Tarefa Fluxo de Dados.Paths[TOTAL_FILHOS]"
-              endId="Package\Tarefa Fluxo de Dados\COLUNAS.Inputs[Entrada de Coluna Derivada]"
-              name="TOTAL_FILHOS"
-              startId="Package\Tarefa Fluxo de Dados\Divisão Condicional.Outputs[TOTAL_FILHOS]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -618,27 +525,27 @@ from [Customers$]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="191,42"
-          Id="Package\Tarefa Fluxo de Dados"
-          TopLeft="406,92" />
-        <NodeLayout
           Size="182,42"
           Id="Package\Tarefa Executar SQL"
-          TopLeft="96,97" />
+          TopLeft="10,5.5" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Tarefa Fluxo de Dados"
+          TopLeft="5.50000000000001,107.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="278,115.5">
+          TopLeft="101,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="128,0"
+              EndConnector="0,60"
               Start="0,0"
-              End="120.5,0">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="120.5,0" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -654,23 +561,41 @@ from [Customers$]</property>
     design-time-name="Package\Tarefa Fluxo de Dados">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
           Size="132,42"
           Id="Package\Tarefa Fluxo de Dados\COLUNAS"
-          TopLeft="518,84" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Tarefa Fluxo de Dados\Divisão Condicional"
-          TopLeft="271,84" />
+          TopLeft="44,107.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Tarefa Fluxo de Dados\PLANILHA_CUSTOMERS"
-          TopLeft="12,82" />
+          TopLeft="5.50000000000003,5.5" />
         <NodeLayout
           Size="133,42"
           Id="Package\Tarefa Fluxo de Dados\CLIENTES"
-          TopLeft="515,205" />
+          TopLeft="43.5000000000001,210" />
+        <EdgeLayout
+          Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Coluna Derivada]"
+          TopLeft="110,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.5"
+              Start="0,0"
+              End="0,53">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <AnnotationLayout
           Text="Componentes:&#xA;&#xA;NOME E SOBRENOME gera atraves de coluna derivada de &#xA;first name e last name criando uma nova coluna.&#xA;&#xA;ESTADO CIVIL cria uma nova coluna com a informação ao analisar&#xA;'M' em 'CASADO' e 'S' EM SOLTEIRO&#xA;&#xA;SEXO cria uma nova coluna com informação ao analisar 'F' em 'FEMININO'&#xA;e 'M' em 'MASCULINO'&#xA;&#xA;FILHOS cria uma nova coluna com informação ao analisar se o numero de filhos&#xA;maior de 2."
           ParentId="ab1d1cbc-0185-4ff7-afdf-801b8a15543f"
@@ -686,71 +611,25 @@ from [Customers$]</property>
           PanelSize="462,292"
           Size="81,43"
           Id="ab1d1cbc-0185-4ff7-afdf-801b8a15543f"
-          TopLeft="80.5,276.5">
+          TopLeft="237.5,209.5">
           <GroupLayout.ChildrenIds>
             <s:String>efcb1781-5d0b-4827-91ee-17a9a983d952</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <EdgeLayout
           Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem do Excel]"
-          TopLeft="221,104">
+          TopLeft="110,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50,0"
+              EndConnector="0,60"
               Start="0,0"
-              End="42.5,0">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarefa Fluxo de Dados.Paths[TOTAL_FILHOS]"
-          TopLeft="447,105">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="71,0"
-              Start="0,0"
-              End="63.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="63.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.38857421875,5,70.2771484375,10.88671875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Coluna Derivada]"
-          TopLeft="582.75,126">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79"
-              Start="0,0"
-              End="0,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
