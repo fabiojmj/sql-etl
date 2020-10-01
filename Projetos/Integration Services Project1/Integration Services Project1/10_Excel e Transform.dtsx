@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="10_Excel e Transform"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{842BDE02-13A3-4E2A-9D58-3381705FA2BA}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{A9A5FF92-9CF6-4701-960F-A9677A136597}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -600,7 +600,7 @@ where TotalChildren &lt;=2</property>
           Text="Componentes:&#xA;&#xA;NOME E SOBRENOME gera atraves de coluna derivada de &#xA;first name e last name criando uma nova coluna.&#xA;&#xA;ESTADO CIVIL cria uma nova coluna com a informação ao analisar&#xA;'M' em 'CASADO' e 'S' EM SOLTEIRO&#xA;&#xA;SEXO cria uma nova coluna com informação ao analisar 'F' em 'FEMININO'&#xA;e 'M' em 'MASCULINO'&#xA;&#xA;FILHOS cria uma nova coluna com informação ao analisar se o numero de filhos&#xA;maior de 2."
           ParentId="ab1d1cbc-0185-4ff7-afdf-801b8a15543f"
           FontInfo="{assembly:Null}"
-          Size="451,NaN"
+          Size="451,231"
           Id="efcb1781-5d0b-4827-91ee-17a9a983d952"
           TopLeft="5.5,5.5" />
         <GroupLayout
@@ -611,7 +611,7 @@ where TotalChildren &lt;=2</property>
           PanelSize="462,292"
           Size="81,43"
           Id="ab1d1cbc-0185-4ff7-afdf-801b8a15543f"
-          TopLeft="237.5,209.5">
+          TopLeft="50.5000000000001,305.5">
           <GroupLayout.ChildrenIds>
             <s:String>efcb1781-5d0b-4827-91ee-17a9a983d952</s:String>
           </GroupLayout.ChildrenIds>
