@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-TFBVH23</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAeZ5NBLQIEa9gV+RQ9QuNAAAAAACAAAAAAAQZgAAAAEAACAAAABSTjbshPSJYNUQNMVD2l34mglxzIrbAoXXeZG07NRyMwAAAAAOgAAAAAIAACAAAABlApwHyGWgf1fKM8C9YqFCKlSxP1gGybPNRxsnkrxTaZAAAAA6gPWjjI8ZhgjkMNosdwqs6VSVRM3pOW7HWda4r3LghB/hRi3y3UKM2yHaqOV02uX/0fkvi6PX+vfrWbixTI21PDEi1sWI5BMZpqBLW1v8HTSs7l9wq0x9zGWh2vjHzTYulzExlYCMzwcGl8ZOXvU5CY2X1y9PjR0WkzxjPpmmB4I4vQA/vLcs69XihjpPxL9AAAAA67y9n00XgN/dANQ6zshzoUXMFtVSvrYwMWmfMQjcPHCo7plukIm+nKdAt/gzeU6gneYKXpa674+UTVO8cB/7Yg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhwhayNWkRUmaBxjPV6nMKQAAAAACAAAAAAAQZgAAAAEAACAAAADoOWd5XpOw87WfJwAYSpRwTlt9EDxPkSPr5f10mD1fDAAAAAAOgAAAAAIAACAAAABoPPgmgzlv6VJTSrQY/rUQCPwNKCVfvfDrsekZLxsVzZAAAADBbAOWUkgqpGw+2obJjXmU3FX3T0wFzr0LMi0JcRxJQcRydk5rG4HAvdSRnhFOzsXchsFipvt5lyk1gPDBzRftrvLbAZNCSYSvQSONv9KWbuQLUpyazINUnYwqMGu0fb069ucwLIJg1GNw7w+VUDVcSmxU4TQ3Bss5QDXeXIBJjE1Zmu1u0jJLdUcCxalmmYRAAAAAqaV0mpgMk2podS/J1OaQK8CegszaDCPh4pfX4+3xruAeiFr1NIneH+x7T0bzcwYnOmlWRr6pRhKsgWqNCYk/uQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -44,6 +44,7 @@
           <SSIS:Package SSIS:Name="11_Multicast.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="12_DataProfile.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="13_EventLog.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="14_ForLoop.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="PRJINTEGRATION.conmgr" />
@@ -3460,16 +3461,31 @@
                 <SSIS:Property SSIS:Name="Name">13_EventLog</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E6B86ECA-EBD9-4331-A0A5-AF3ADBC021EE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4D3C43B7-8FDB-41AE-97A6-3C6CB885F34F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.ARQUIVO_LOG.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\fabio\Cursos\ETL\Dados\ARQUIVO_LOG</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.WR_CLIENTE_LOG.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -3632,8 +3648,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3668,6 +3682,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="14_ForLoop.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{6E693FCE-62FB-4965-AACA-F40D0E709573}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">14_ForLoop</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{74A68E60-BBE5-4180-BC0C-C53D3557562F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

@@ -11,11 +11,22 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="13_EventLog"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{E6B86ECA-EBD9-4331-A0A5-AF3ADBC021EE}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{4D3C43B7-8FDB-41AE-97A6-3C6CB885F34F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ARQUIVO_LOG]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{FAA7F408-3AD2-42CF-AE8F-08CEB751EE4B}"
+      DTS:ObjectName="ARQUIVO_LOG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\fabio\Cursos\ETL\Dados\ARQUIVO_LOG" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[WR_CLIENTE_LOG]"
       DTS:CreationName="FLATFILE"
@@ -82,6 +93,16 @@
   </DTS:ConnectionManagers>
   <DTS:LogProviders>
     <DTS:LogProvider
+      DTS:ConfigString="ARQUIVO_LOG"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Grava entradas no log de eventos em um arquivo CSV"
+      DTS:DTSID="{1ED330EF-E463-4041-BCCC-3568A2842741}"
+      DTS:ObjectName="Provedor de log SSIS log para arquivos de Texto1">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+    <DTS:LogProvider
       DTS:CreationName="Microsoft.LogProviderEventLog"
       DTS:Description="Grava entradas no Log de Eventos"
       DTS:DTSID="{EAA82402-4976-4F38-B4F7-6289A0C6BD01}"
@@ -97,7 +118,7 @@
     DTS:LoggingMode="1">
     <DTS:Property
       DTS:DataType="8"
-      DTS:Name="EventFilter">21,7,OnError,19,OnExecStatusChanged,13,OnInformation,27,OnPipelinePostComponentCall,25,OnPipelinePostEndOfRowset,25,OnPipelinePostPrimeOutput,26,OnPipelinePreComponentCall,24,OnPipelinePreEndOfRowset,24,OnPipelinePrePrimeOutput,18,OnPipelineRowsSent,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,22,OnVariableValueChanged,9,OnWarning,10,Diagnostic,12,DiagnosticEx</DTS:Property>
+      DTS:Name="EventFilter">2,7,OnError,9,OnWarning</DTS:Property>
     <DTS:Property
       DTS:EventName="Diagnostic"
       DTS:Name="ColumnFilter">
@@ -478,7 +499,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{EAA82402-4976-4F38-B4F7-6289A0C6BD01}" />
+        DTS:InstanceID="{1ED330EF-E463-4041-BCCC-3568A2842741}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>

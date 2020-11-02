@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-TFBVH23</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAeZ5NBLQIEa9gV+RQ9QuNAAAAAACAAAAAAAQZgAAAAEAACAAAAAbpP5NQBiG5TFTAYGCQSgeCC6SJ5wRJwy6+hAv/epiIQAAAAAOgAAAAAIAACAAAADfY4AgbpCmeb5TdUf7RaD1B82b7yDXS4mapw+ETFD/+ZAAAABdW0ncK3AmeignrV1S+uyt5v0SkyxPOXCounm63wMlpjYO1ykG2xacCcqjxuGvlXoJR4wdRU2CxiDv6rTuLYhyp+GWiZxygMm7ogNbdBGLMD9uO83vOR7zsI0Am0kHX2snpf4qy0SdDW2iXkjS3bPblB0wfx/mOmWzXiaY/258lLfkzdwpXuU53hdkZHwYM3dAAAAAttSecNH+mHuoE9xLY4widcMiFdN47bok+QNOkXLFLG7kDkXg72vY3opApSCVbnKeS39bk7sbxq4CioNISgYYzQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhwhayNWkRUmaBxjPV6nMKQAAAAACAAAAAAAQZgAAAAEAACAAAAAJ334BaPyBX/CeGFdyTFw+PXnI/aQHTHLyoz5C/K7SLwAAAAAOgAAAAAIAACAAAACsGzpXxi+SFR/aIxFBprc6ZeihnsyexZEx/TDelP/KUJAAAAAWQyUjgcSCEqH1KG9F1Vu4dSIeN1i9y5LCoHZmB5KxLxWlA9W6DTss0HRRpYdSiQ4XHfOCD//zzotNBTWp7S2psOypGH0emi9I1/UTQcyoOVmXheJsKGsi9W/mpOhtusl+hS/fSviEXDPTzKA1Wk7mfnvkHGsFcEjNZnIm0ScGFQ/p2YXCmSMNWGmhUUzjUfJAAAAA070HXLAsBuaRsc9DwKdf+xHD0ucS/aej3+KMS6dpLeQQaiUTjgItp0UiSg4sD/w4vzkwt2lZtUOaoqy9XvGdFQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -44,6 +44,7 @@
           <SSIS:Package SSIS:Name="11_Multicast.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="12_DataProfile.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="13_EventLog.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="14_ForLoop.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="PRJINTEGRATION.conmgr" />
@@ -3681,6 +3682,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="14_ForLoop.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{6E693FCE-62FB-4965-AACA-F40D0E709573}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A4ABF01F-5443-4A15-8CBA-B342BF0DBDA7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
