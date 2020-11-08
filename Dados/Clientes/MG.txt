@@ -1,0 +1,331 @@
+1|Murilo|Cavalcanti|Quadra Seis 1610|68513-210
+2|Arthur|Araujo|Rua Dez 1426|13178-293
+3|Livia|Barros|Rua Eduardo Jorge Lopes Novaes 452|57071-060
+4|Matilde|Ferreira|Rua Guaratuba 996|13327-123
+5|Alex|Azevedo|Rua Coelho Neto 1194|89036-360
+6|Erick|Costa|Rua Fernandes de Abreu 265|04543-070
+7|Felipe|Castro|Quadra QNL 02 AÅrea Especial 03 887|72155-506
+8|Douglas|Fernandes|Rua Acucena 519|06327-250
+9|Sofia|Oliveira|Travessa Jose Mendonca 787|60534-091
+10|Thiago|Silva|Rua Sao Januario 866|26230-590
+11|Lucas|Pinto|Parque Residencial Jardim Tropical 1170|57050-600
+12|Matheus|Ribeiro|Rua Tress 1647|13417-724
+13|Isabela|Barros|Rua dos Limoeiros 1177|09820-600
+14|Bianca|Costa|Rua Renato Alves da Silva 1217|53520-155
+15|Antonio|Santos|Avenida Otaviano Fava 1128|15086-010
+16|Vitoria|Pereira|Travessa Virgilio Torno 784|25809-100
+17|Sofia|Santos|Rua Joao Lucio Alves Vilela 845|29140-450
+18|Manuela|Rocha|Alameda T 1744|38701-486
+19|Pedro|Carvalho|Rua Carlos Henrique Lins 1377|57075-580
+20|Gustavo|Cunha|Rua Julio Groth Elias 52|83212-415
+21|Emilly|Castro|Rua Sao Francisco 624|68035-300
+22|Emily|Melo|Rua Belo Horizonte 1116|52111-750
+23|Maria|Alves|Rua Alberto Torres 132|26255-310
+24|Antonio|Araujo|Rua Rubi 1263|78050-130
+25|Gabriela|Melo|Avenida Dez de Novembro 308|53020-060
+26|Ana|Ribeiro|Rua Sao Lucas 1922|26172-280
+27|Samuel|Sousa|Rua Nestor Ponce de Azevedo 315|15047-135
+28|Manuela|Sousa|Travessa Paulo VI 1166|78710-740
+29|Fabio|Ferreira|Rua Watanabe 1099|74473-807
+30|Matilde|Correia|Quadra Quadra 148 1510|72865-148
+31|Nicolas|Azevedo|Rua Pedro Perissinoto 1769|13477-300
+32|Kauan|Pinto|Rua Doutor Darcy Monteiro 1429|29065-350
+33|Vinicius|Almeida|Rua Luiz Pereira 931|59612-020
+34|Isabella|Costa|Rua Pedro Joao Matte 1808|95090-141
+35|Bruna|Sousa|Rua Pombo Correio 98|09165-150
+36|Anna|Cardoso|Rua Regente Feijo 1418|06766-025
+37|Fabio|Azevedo|Praca Jose da Cunha Couto 1329|05131-015
+38|Gabriel|Correia|Passagem Miramar 1420|66117-340
+39|Miguel|Santos|Rua Luis Carlos Virgulino 1842|58106-512
+40|Luiz|Ferreira|Rua Margarida Queiros 1881|60822-530
+41|Guilherme|Almeida|Rua Perola do Mar 1589|07178-480
+42|Eduarda|Castro|Rua Guilherme MAºller 188|13633-012
+43|Gabrielly|Ferreira|Rua Garcia Rezende 925|50960-590
+44|Gabriela|Santos|Rua Santo Inacio 308|03086-080
+45|Julia|Ferreira|Rua Manuel da Silva Leao 1139|08430-400
+46|Joao|Barros|Caminho Dezenove 1958|42803-250
+47|Leonor|Martins|Rua Martinica 1324|21250-711
+48|Enzo|Lima|Avenida Manga Larga 1940|13324-310
+49|Estevan|Azevedo|Rua da Padroeira 1853|13060-794
+50|Alex|Correia|Rua Barao da Serra Negra 1042|85858-430
+51|Matheus|Cavalcanti|Rua dos Jatobas 1497|12523-030
+52|Marisa|Azevedo|Rua Dom Joao 1349|26360-230
+53|Fernanda|Martins|Praca Osmar Jose Bighetti 43|03542-010
+54|Tiago|Lima|Rua Andre Alvarenga Macedo 72|29145-030
+55|Arthur|Silva|Rua Conselheiro Andrade Figueira 696|23826-236
+56|Marina|Sousa|Rua Antonio Michels 678|89226-531
+57|Tomas|Barbosa|Rua Maria de Oliveira 373|26463-280
+58|Vitoria|Oliveira|Rua Criciuma 548|83060-440
+59|Tomas|Barbosa|Rua Alto da Boa Esperanca 524|54315-460
+60|Samuel|Pinto|Rua Dilson Nunes 1541|24450-045
+61|Douglas|Sousa|Rua Alto Acre 1764|17063-080
+62|Vinicius|Pereira|Rua das Cerejeiras 1077|87301-350
+63|Matilde|Cardoso|Rua Luiz Ferraz Sampaio Junior 1794|18071-775
+64|Diego|Pinto|Rua Mario Sfaciotti 582|06172-090
+65|Nicolash|Silva|Quadra EQNP 07/11 Bloco A 1269|72240-541
+66|Isabela|Gomes|Avenida Monlevade 1911|74703-130
+67|Luana|Dias|Rua Benvinda B. Ramos 361|15810-320
+68|Thais|Costa|Rua Caio Faco 577|60832-680
+69|Carla|Dias|Avenida Palestina 1697|13091-150
+70|Brenda|Carvalho|Rua Montevideo 1707|87030-470
+71|Nicole|Almeida|Rua Americana 388|34710-510
+72|Giovanna|Sousa|Rua Joao Marchiori 872|03547-020
+73|Kaues|Oliveira|Praca Goiania 58|04673-140
+74|Alex|Cavalcanti|Rua Armando Caffeo 732|17022-022
+75|Jose|Ferreira|Rua Professor Alfredo Gomes 714|22251-080
+76|Luiza|Lima|Rua Antonio Falcetti 598|16070-160
+77|Pedro|Pereira|Rua Eduardo Lima 1561|03375-002
+78|Livia|Barros|Quadra SMPW Quadra 26 Conjunto 02 1870|71745-602
+79|Nicolash|Souza|Rua Vinte e Quatro 497|13058-260
+80|Thiago|Cardoso|Rua A 148|47807-520
+81|Mariana|Martins|Avenida Beira Rio 1529|52130-570
+82|Eduarda|Castro|Praca Bandeirante 1094|74323-215
+83|Otavio|Rocha|Rua dos Flautins 35|04933-140
+84|Kaua|Santos|Quadra Quadra 055 Conjunto E 1634|72755-005
+85|Erick|Sousa|Travessa do Areal 386|55602-501
+86|Arthur|Gomes|Rua Zumbi dos Palmares 691|96506-465
+87|Erick|Barros|Rua Carlos Gusso 171|81820-450
+88|Camila|Almeida|Rua Santo Amaro 344|74460-200
+89|Luis|Ribeiro|Rua Jose Eugesnio de Oliveira 491|38035-812
+90|Melissa|Sousa|Avenida Bernardo Vieira de Melo 996|55032-330
+93|Alice|Pinto|4a Travessa Goias 175|55018-204
+94|Rafaela|Gomes|Rua das Paineiras 86|38184-540
+95|Danilo|Oliveira|Rua Maria Rosa da Silva 1567|88813-674
+96|Gabrielly|Cunha|Rua Professor Helio Wendling 1491|36062-100
+97|Luis|Lima|Rua Medeia 1600|31615-420
+98|Luana|Correia|Rua Cinco 587|13480-706
+99|Raissa|Correia|Rua Geralda de Fatima Paiva Maia 749|58106-534
+100|Igor|Castro|Rua Cicero Freitas Barros 702|38308-020
+101|Manuela|Castro|Rua Professora Aspasia Ayer 76|30660-340
+102|Vitoria|Santos|Rua das Japiras 630|29168-640
+103|Erick|Araujo|Rua Treze de Maio 280|13010-071
+104|Vinicius|Goncalves|Rua Padre Geraldo Goseling 1962|16200-768
+105|Vitoria|Cardoso|Rua Vicinal Manaus 701|74692-040
+106|Gabriel|Cardoso|Rua dos Bombeiros 1750|26160-020
+107|Carolina|Ferreira|Rua das Jabuticabeiras 1911|09070-650
+108|Rafael|Souza|Rua O 285|08635-474
+109|Tomas|Silva|Rua Outiz 1936|05857-410
+110|Luis|Sousa|Rua Alvaro de A. Rezende 703|13875-430
+111|Larissa|Alves|Beco do Ipase 1497|69030-090
+112|Gustavo|Goncalves|Rua Eliziario Barbosa 1677|41295-100
+113|Nicolas|Correia|Rua Colombia 924|25650-040
+114|Luiza|Gomes|Rua Limeira 942|74968-060
+115|Bianca|Gomes|Travessa do Mosqueira 158|20021-270
+116|Marcos|Barbosa|Rua Lourival Ambrosio Balbino 1587|31985-360
+117|Isabelle|Ferreira|Avenida Nilo Bittencourt 368|88312-100
+118|Julieta|Castro|Rua 749 802|88818-066
+119|Kaua|Goncalves|Ladeira do Arraial 443|41204-050
+120|Tiago|Fernandes|Rua Nova 318|69057-170
+121|Beatrice|Ferreira|Rua Dois 1984|27950-730
+122|Alex|Gomes|Travessa Corinto 961|22773-560
+123|Vitor|Santos|Rua Camara 1087|29176-310
+124|Thiago|Cardoso|Rua Jordania 1917|13322-212
+125|Kaues|Gomes|Rua Amazonas 711|77060-154
+126|Thais|Correia|Rua Doutor Miguel 746|26377-300
+127|Diego|Barbosa|Rua Conde de Iraja 826|50710-310
+128|Bruno|Barbosa|Rua Orlando Moretzsohn 1452|31920-230
+129|Evelyn|Silva|Rua dos Brilhantes 893|85855-490
+130|Luana|Correia|Vila Damasco 1184|60181-780
+131|Leticia|Souza|Rua dos Platanos 1043|83327-116
+132|Julieta|Goncalves|Rua Iraci 1563|12225-020
+133|Leila|Rodrigues|Rua Roberto Verdussem 1108|12229-140
+134|Bianca|Lima|Rua Vicente Lopes 888|60822-100
+135|Marcos|Souza|Rua V Dois 1654|65073-060
+136|Diogo|Fernandes|Quadra SQN 313 1505|70766-000
+137|Luiza|Alves|Rua Antonieta Fazolin Petean 1104|14061-580
+138|Lara|Barbosa|Rua Cinco 1249|18054-025
+139|Anna|Oliveira|Rua General Carneiro 375|14400-500
+140|Guilherme|Martins|Rua Celso de Azevedo 1269|86813-490
+141|Gabriela|Ribeiro|Praca Movimento Democratico Brasileiro 1359|09371-340
+142|Carlos|Oliveira|Rua Maestro Jones Johnson 188|50660-380
+143|Tania|Costa|Praca Marinho Gomes 943|35660-060
+144|Carlos|Gomes|Rua Cabecudas 332|85855-607
+145|Guilherme|Carvalho|Quadra 107 Norte Alameda 132 1417|77001-122
+146|Marisa|Oliveira|Travessa Sao Jose 110|53200-351
+147|Guilherme|Melo|Rua Conjunto da Paz 1758|08142-360
+148|Laura|Pinto|Rua Francisco Aires de Carvalho 721|59086-360
+149|Sofia|Santos|Rua Dona Clara 1724|30290-310
+150|Kaua|Oliveira|Rua Noel Clodoval Cunninghann 1144|84174-530
+151|Alex|Castro|Rua Itupeva 1053|13339-305
+152|Beatrice|Barbosa|Rua Andaquara 849|04673-110
+153|Daniel|Araujo|Rua Quarenta e Seis 1962|12312-665
+154|Joao|Pinto|Rua Ayrton Senna 210|53210-840
+155|Luana|Silva|Rua Olga Benario 60|06784-264
+156|Brenda|Cardoso|Rua Doze 322|84060-600
+157|Igor|Oliveira|Alameda Joao da Costa Sampaio 1713|17211-241
+158|Pedro|Melo|Avenida das NacAµes 214|55294-760
+159|Vinicius|Martins|Rua dos Abacateiros 792|13474-372
+160|Danilo|Pinto|Rua Dom Luiz de Vasconcelos 1180|40391-180
+161|Vinicius|Souza|Rua Rodrigues Alves 963|13188-083
+162|Camila|Melo|Rua Sao Tiago 1264|41200-075
+163|Nicole|Sousa|Rua Joao Schibelsky 1794|13486-551
+164|Emilly|Alves|Rua dos Banguenses 708|21825-060
+165|Nicolas|Costa|Vila Doutor Helio Amado 1379|25625-011
+166|Ana|Azevedo|Rua dos Bonitos 1864|88053-469
+167|Giovanna|Lima|Rua Nelson Antonio Farias 1706|81030-350
+168|Miguel|Santos|Rua Rio Negro 249|93226-380
+169|Eduarda|Pinto|Rua Aimores 494|25954-270
+170|Luis|Araujo|Rua Maria Rita Maciel Colombari 1002|13054-030
+171|Nicolash|Martins|Rua Joao Antunes 713|09847-510
+172|Miguel|Goncalves|Rua Belem 1994|19046-200
+173|Kaues|Correia|Rua AÅurea Dias Farani 1493|23820-100
+174|Mateus|Barbosa|Estrada Contenda 737|26260-430
+175|Emilly|Fernandes|Passagem Esfinge 460|09974-021
+176|Beatrice|Gomes|Rua Bauxita 559|35182-145
+177|Nicolash|Correia|Rua Major Antonio Carvalho 257|27420-100
+178|Sofia|Cavalcanti|Estrada Santo de Andre 1059|74482-030
+179|Emilly|Barbosa|Avenida Taboca 667|78932-075
+180|Joao|Rodrigues|Rua Um 9|13210-101
+181|Marina|Ferreira|Rua Rondonia 527|89203-470
+182|Sarah|Sousa|Rua Silvino Martins 1216|25525-740
+183|Igor|Correia|Rua J 4 A 1023|74855-470
+184|Nicolash|Rocha|Rua Recife 1369|90880-500
+185|Livia|Lima|Rua Canuto Saraiva 1951|20530-590
+186|Rafaela|Goncalves|Quadra Quadra 141 1145|72853-141
+187|Douglas|Martins|Rua Benedito J. dos Reis 728|86801-590
+188|Rebeca|Rocha|Avenida Doutor Luciano Raul Panatieri 594|91450-230
+189|Bianca|Barbosa|Rua Pedro de Labatut 167|08280-020
+190|Enzo|Carvalho|Rua Joao Gaion 579|86036-640
+191|Maria|Rodrigues|Rua Maria Vitoria 114|18056-510
+192|Aline|Castro|Rua Treze de Maio 535|16901-301
+193|Emilly|Cunha|Rua Dezoito 1346|38073-047
+194|Victor|Oliveira|Rua Itu 284|13222-100
+195|Lavinia|Rodrigues|Alameda Santo Antonio 1145|79321-053
+196|Rebeca|Pinto|Rua Rio Parana 1640|13565-200
+197|Vitor|Barbosa|Rua Jose Fagundes de Moura 1012|13181-580
+198|Thiago|Sousa|Avenida Jorge Schimmelpfeng 1951|85851-110
+199|Carla|Costa|Rua Estanislau Szarek 399|81315-380
+200|Matilde|Rodrigues|Avenida Doutor Aluisio Cherubini 1958|15061-425
+201|Julieta|Castro|Estrada Ligacao 1936|26347-220
+202|Caua|Ribeiro|Rua Quarenta e Oito 1626|25555-252
+203|Melissa|Lima|Vila Almir 1533|60741-640
+204|Leila|Ferreira|Travessa Santa Clara 1740|52081-141
+205|Samuel|Barbosa|Rua Estrela 1257|89221-710
+206|Rebeca|Ferreira|Rua Varzea do Carmo 969|59131-730
+207|Aline|Carvalho|Rua VF 90 86|74473-770
+208|Marcos|Ribeiro|Rua A 1447|61936-470
+209|Otavio|Silva|Rua RI 19 1276|74356-028
+210|Joao|Alves|Rua Geralda Maria de Jesus Santos 1964|03514-080
+211|Diogo|Barros|Rua Euclides da Cunha 33|20940-060
+212|Tiago|Pereira|Estrada Joao Bibiano Marcos 579|94100-550
+213|Nicole|Cunha|Rua Amapa 840|06626-370
+214|Julio|Pinto|Rua Luisa Magnus 982|25540-003
+215|Brenda|Barbosa|Rua Johann Lafin 733|89035-058
+216|Livia|Goncalves|Rua 02 462|72812-320
+217|Julia|Santos|Avenida Francisco Martins Caldeira Filho 1415|14811-450
+218|Eduarda|Lima|Rua Apeninos 1725|14060-490
+219|Tania|Souza|Loteamento Chacara Estancia Paulista 1150|08653-060
+220|Bianca|Ferreira|Quadra QNP 32 Conjunto Z 720|72236-224
+221|Sophia|Alves|Rua Geraldo Rodrigues da Silva 129|27347-270
+222|Andre|Barbosa|Rua Oitenta e Quatro 512|78058-494
+223|Breno|Cunha|Rua Estado de Israel 977|40460-620
+224|Gabriel|Melo|Rua das Acacias 1361|22451-060
+225|Pedro|Cavalcanti|Rua Jose Romulado de Oliveira 215|13053-613
+226|Matheus|Lima|Rua Floresta 235|11542-250
+227|Bruna|Sousa|Rua Quatorze 1077|33925-220
+228|Miguel|Lima|Rua Rio Xingu 1237|06236-050
+229|Nicole|Alves|Rua Jacana 1271|83218-320
+230|Igor|Pinto|Rua Manaira 1282|29117-122
+231|Larissa|Araujo|Rua do Sape 120|26051-710
+232|Camila|Rocha|Rua Joao Magiano Pinto 325|79630-250
+233|Daniel|Lima|Rua do Tamarineiro 1035|41610-430
+234|Luis|Dias|Rua Comendador Antonio Fontoura 946|91710-040
+235|Carolina|Ribeiro|Rua Doutor Aloisio Muniz 1518|36031-010
+236|Renan|Pinto|Rua Valderez Andrade 730|58050-062
+237|Luiza|Santos|Rua Monte Olimpo 863|06514-200
+238|Luan|Souza|Rua Iuna 1409|29161-743
+239|Diogo|Goncalves|Rua Rio Pardo 230|93340-170
+240|Eduardo|Dias|Rua Heretiano Rocha 1324|90690-350
+241|Gabrielly|Costa|Rua 4 1032|74987-824
+242|Douglas|Lima|Rua Frei Jose Machado 1233|08290-180
+243|Carolina|Silva|Rua Saloa 1397|53230-690
+244|Kaua|Fernandes|Viela Caray 586|07024-161
+245|Luana|Oliveira|Rua Joao Dasambiagio 1410|08790-380
+246|Julia|Cavalcanti|Passagem Tress de Julho 1848|66625-770
+247|Eduardo|Cunha|Rua Jose Vivacqua 971|29072-285
+248|Douglas|Pereira|Rua Itabera 56|51330-590
+249|Alex|Santos|Rua Martinho Bueno 168|17017-160
+250|Martim|Rodrigues|Praca Oregano 477|74972-600
+251|Felipe|Alves|Beco do Capela 1975|25042-590
+252|Giovanna|Cunha|Travessa Bonfim 1174|57025-600
+253|Rodrigo|Silva|Rua Santa Lucia 1694|58027-403
+254|Gabrielly|Fernandes|Quadra Quadra 105 Conjunto 13 1276|72601-117
+255|Isabelle|Ribeiro|Rua Frederico Lubke 1785|89036-418
+256|Luana|Melo|Rua Tress 1398|13336-602
+257|Julian|Sousa|Rua dos Jacarandas 456|13272-560
+258|Marisa|Rodrigues|Vila Jeane 1246|60175-815
+259|Lavinia|Goncalves|Rua Antonio Putinatti 361|17523-553
+260|Kaua|Costa|Rua Professor Mercedo Moreira 1276|31710-340
+261|Daniel|Gomes|Rua Gabriel Rastreli 1008|28630-060
+262|Luiza|Correia|Rua 4 1169|60733-510
+263|Joao|Souza|Quadra SHIGS 711 Bloco F 1025|70361-706
+264|Bruna|Alves|Rua das Arapongas 1047|13467-325
+265|Nicolash|Souza|Rua Dias Gomes 159|18681-560
+266|Enzo|Oliveira|Travessa Inglaterra 1628|65085-233
+267|Joao|Barbosa|Rua Marquess do Herval 1811|97060-430
+268|Pedro|Costa|Rua Trinta e Um 698|38051-405
+269|Amanda|Sousa|Rua Escrivao Azevedo 299|60822-520
+270|Diego|Castro|Avenida Sebastiao Salazar 1715|52221-170
+271|Kaua|Pereira|Rua Wilton Fernando Rezende 1512|13275-622
+272|Eduardo|Sousa|Rua Cicero Brasil 1914|83304-110
+273|Sofia|Martins|Rua Cesar Cantu 71|03137-120
+274|Sophia|Barbosa|Quadra 138 1552|73751-438
+275|Luan|Sousa|Servidao Laura Elisa da Silva 1813|88135-388
+276|Bianca|Barbosa|Rua Jerson Perez Nonato 254|15035-640
+277|Luana|Dias|Rua Professor Alda Leal 1132|40286-340
+278|Martim|Goncalves|Avenida Joao Gomes Nogueira 858|96085-200
+279|Carolina|Araujo|Rua Antonio Damiani 1021|38037-300
+280|Laura|Fernandes|Travessa Dois 1207|12062-670
+281|Kai|Castro|Rua Nossa Senhora dos Remedios 819|22713-576
+282|Diego|Goncalves|Rua Conceicao Araguaia 1495|07144-670
+283|Nicolash|Alves|Rua Itapetininga 82|08589-180
+284|Diego|Cunha|Rua Guamirim 1246|08050-150
+285|Beatriz|Correia|Rua Doutor Antonio Borja 1867|44010-390
+286|Beatrice|Silva|Rua Jose Emmendoerfer 554|89253-000
+287|Manuela|Barbosa|Quadra Quadra 073 224|72865-073
+288|Fabio|Gomes|Rua Marte 1613|19033-540
+289|Beatrice|Dias|Rua Doutor Luiz Mello Guimaraes 1166|97572-310
+290|Martim|Sousa|Rua AÅguia-branca 343|83609-370
+291|Bianca|Martins|Rua Galdino Pimentel 336|20735-260
+292|Larissa|Cardoso|Rua G 1323|12228-421
+293|Kaues|Araujo|Rua Parisiense 167|13312-411
+294|Luiza|Goncalves|Rua Limeira 1172|74968-060
+295|Ana|Correia|Praca Carlos Gomes 718|38015-480
+296|Antonio|Pinto|Rua Sebastiao Pereira Cabral 1113|37502-494
+297|Luiza|Cardoso|Rua Luiz Bononomi 70|88351-584
+298|Manuela|Correia|Rua Armindo Dias Ferreira 176|08551-420
+299|Mariana|Gomes|Praca Miguel Forte 1608|01129-030
+300|Carlos|Fernandes|Avenida Alcindo Cacela 1424|66040-020
+301|Mateus|Cunha|Rua Sao Joao 1214|13455-115
+302|Marisa|Carvalho|Rua Serra Pelada 722|06657-480
+303|Evelyn|Pereira|Quadra Dez 1766|67040-090
+304|Bruna|Carvalho|Rua Meyer 1476|24737-296
+305|Evelyn|Lima|Rua Florianopolis 175|74560-473
+306|Thais|Ribeiro|Rua Um 194|38414-471
+307|Bruna|Cardoso|Rua Padre Manoel da Nobrega 547|12501-260
+308|Alex|Sousa|Rua dos Cedros 585|12421-560
+309|Isabella|Dias|Quadra 112 Norte Alameda 6 131|77006-170
+310|Lara|Pereira|Rua Jorge Rocha Lima 1289|12283-220
+311|Samuel|Cardoso|Vila Morange 1710|60741-360
+312|Thais|Sousa|Rua Cesar Sa Carvalho 828|26041-450
+313|Fabio|Souza|Rua Jose Assis Ferreira 782|15060-007
+314|Martim|Goncalves|Rua Evaristo de Antoni 928|95041-000
+315|Gabrielly|Oliveira|Rua Waldemar de Carvalho 1371|07022-190
+316|Luiza|Souza|Travessa Adelino Leonardo Ferreira 1920|68746-180
+317|Paulo|Souza|Rua Tenente Euclides Bandeira 1850|58056-330
+318|Tiago|Carvalho|Travessa Sao Diogo 97|20220-670
+319|Vitoria|Pinto|Rua Delcinha do Rosario 1170|89224-510
+320|Breno|Barros|Rua Amaro Ribeiro Dias 733|24740-290
+321|Emilly|Pinto|Rua AÅgata 63|87508-255
+322|Erick|Cardoso|Avenida Jose Rangel Filho 1098|07179-350
+323|Kaua|Lima|Rua Ana Paula 1266|41204-010
+324|Rafaela|Rodrigues|Rua Maria Marcolino Silveira 1690|35182-050
+325|Isabela|Ribeiro|Bloco Icuaba 1360|66615-472
+326|Mateus|Lima|Quadra SHCES Quadra 0509 Bloco E 1726|70650-595
+327|Ana|Alves|Avenida D 1367|17035-730
+328|Eduarda|Carvalho|Rua Joao Nano 1940|13210-250
+329|Lara|Silva|Rua Pedro AÅlvares Cabral 1509|58025-700
+330|Ryan|Araujo|Alameda Estrela 1649|66840-760
+331|Enzo|Oliveira|Avenida Jaime de Barros 1948|38408-704
+332|Andre|Castro|Rua Doutor Jose Maria 1176|52041-000
+333|Mariana|Silva|Rua do Lirismo 1280|03102-040
