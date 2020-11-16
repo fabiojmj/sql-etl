@@ -1,0 +1,1802 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/12/2020 8:22:48 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-TFBVH23"
+  DTS:CreatorName="DESKTOP-TFBVH23\fabio"
+  DTS:DTSID="{DA338A02-3EE4-4218-981A-7E4B5B55035A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{92B2C338-140A-4C08-8B08-1FAD47E124A3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{67848F42-C1BE-4D93-93B7-91160BF4E1D2}"
+      DTS:ObjectName="localhost\sqlexpress.COMPONENTES">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\sqlexpress;Initial Catalog=COMPONENTES;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\LOOKUP"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D266829D-9BD7-4EDF-A863-204D3EA21B7B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOOKUP">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\LOOKUP\Tarefa Executar SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{9491B5E9-C383-4725-95C8-67DCC96ED1BE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Executar SQL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{67848F42-C1BE-4D93-93B7-91160BF4E1D2}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE TB_LOOKUP_CLIENTE_TELEFONE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\LOOKUP\Tarefa Fluxo de Dados"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{91146F1D-5400-4BE1-A595-D4483D0C79B0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Fluxo de Dados"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[TB_LOOKUP_CLIENTE_TELEFONE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDCLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="IDCLIENTE"
+                          externalMetadataColumnId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDCLIENTE]"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]" />
+                        <inputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NOME"
+                          externalMetadataColumnId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME]"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[NOME]" />
+                        <inputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TIPO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="TIPO"
+                          externalMetadataColumnId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO]"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa].Columns[TIPO]" />
+                        <inputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[NUMERO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="NUMERO"
+                          externalMetadataColumnId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NUMERO]"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa].Columns[NUMERO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDCLIENTE]"
+                          dataType="i4"
+                          name="IDCLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NOME" />
+                        <externalMetadataColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="TIPO" />
+                        <externalMetadataColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NUMERO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="NUMERO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="Origem OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[CLIENTES]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDCLIENTE]"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]"
+                          name="IDCLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                          length="30"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                          name="NOME"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDCLIENTE]"
+                          dataType="i4"
+                          name="IDCLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NOME" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDCLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDCLIENTE]"
+                          name="IDCLIENTE" />
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                          name="NOME" />
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="PROCURA_TELEFONE"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TELEFONE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TELEFONE]) [refTable]
+where [refTable].[ID_CLIENTE] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IDTELEFONE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TIPO" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NUMERO" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ID_CLIENTE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Inputs[Entrada de Pesquisa].Columns[IDCLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="IDCLIENTE"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">ID_CLIENTE</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa].Columns[TIPO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          length="3"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa].Columns[TIPO]"
+                          name="TIPO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">TIPO</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa].Columns[NUMERO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          length="10"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa].Columns[NUMERO]"
+                          name="NUMERO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">NUMERO</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\LOOKUP\Tarefa Fluxo de Dados.Paths[Saída de Correspondência de Pesquisa]"
+                  endId="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Correspondência de Pesquisa"
+                  startId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\LOOKUP\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+                  endId="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE.Inputs[Entrada de Pesquisa]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LOOKUP.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{714B79D2-651F-4649-992E-35E1E98C0D27}"
+          DTS:From="Package\LOOKUP\Tarefa Executar SQL"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\LOOKUP\Tarefa Fluxo de Dados" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MERGE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9F89C7EF-01CB-4B51-815F-CA68EFFC683E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MERGE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\MERGE\Tarefa Fluxo de Dados"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{2978D0CE-F1C7-4681-A15E-28454703D93A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Fluxo de Dados"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="CLIENTES"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[CLIENTES]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[IDCLIENTE]"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]"
+                          name="IDCLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                          length="30"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                          name="NOME"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[IDCLIENTE]"
+                          dataType="i4"
+                          name="IDCLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NOME" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[IDCLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[IDCLIENTE]"
+                          name="IDCLIENTE" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                          name="NOME" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[DB_CLIENTE_MERGE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDCLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="IDCLIENTE"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDCLIENTE]"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[IDCLIENTE]" />
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NOME"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME]"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[NOME]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDCLIENTE]"
+                          dataType="i4"
+                          name="IDCLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NOME" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE"
+                  componentClassID="Microsoft.Merge"
+                  contactInfo="Mesclar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina linhas de vários fluxos de dados classificados em um fluxo de dados classificado. Ao contrário da Junção de Mesclagem, todas as linhas fluem para a saída. Por exemplo, combine duas listas classificadas de clientes em uma única lista classificada. Se a classificação não for importante, use a transformação Unir Tudo. "
+                  name="MERGE"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 1]"
+                      name="Mesclar Entrada 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 1].Columns[IDCLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="IDCLIENTE"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída].Columns[IDCLIENTE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Identificação de linhagem de coluna de saída"
+                              name="OutputColumnLineageID">#{Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[IDCLIENTE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 1].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NOME"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída].Columns[NOME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Identificação de linhagem de coluna de saída"
+                              name="OutputColumnLineageID">#{Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[NOME]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 2]"
+                      name="Mesclar Entrada 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 2].Columns[ID_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_CLIENTE"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[ID_CLIENTE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Identificação de linhagem de coluna de saída"
+                              name="OutputColumnLineageID">#{Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[IDCLIENTE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 2].Columns[NUMERO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="NUMERO"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[NUMERO]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Identificação de linhagem de coluna de saída"
+                              name="OutputColumnLineageID">#{Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[NOME]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1]"
+                      isSorted="true"
+                      name="Mesclar Saída 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[IDCLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[IDCLIENTE]"
+                          name="IDCLIENTE"
+                          sortKeyPosition="1" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1].Columns[NOME]"
+                          name="NOME" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+                  name="ORDENAR"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o número máximo de threads a usar para classificação."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Inputs[Classificar Entrada]"
+                      name="Classificar Entrada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Inputs[Classificar Entrada].Columns[IDCLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="IDCLIENTE"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica as opções de comparação para os dados de caractere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica a ordem de classificação da coluna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Inputs[Classificar Entrada].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NOME"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[NOME]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica as opções de comparação para os dados de caractere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica a ordem de classificação da coluna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída]"
+                      isSorted="true"
+                      name="Classificar Saída">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída].Columns[IDCLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída].Columns[IDCLIENTE]"
+                          name="IDCLIENTE"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                              name="SortColumnId">#{Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[IDCLIENTE]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída].Columns[NOME]"
+                          name="NOME">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                              name="SortColumnId">#{Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB].Columns[NOME]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+                  name="ORDERNAR"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o número máximo de threads a usar para classificação."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Inputs[Classificar Entrada]"
+                      name="Classificar Entrada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Inputs[Classificar Entrada].Columns[IDTELEFONE]"
+                          cachedDataType="i4"
+                          cachedName="IDTELEFONE"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[IDTELEFONE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica as opções de comparação para os dados de caractere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica a ordem de classificação da coluna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Inputs[Classificar Entrada].Columns[TIPO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="TIPO"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[TIPO]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica as opções de comparação para os dados de caractere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica a ordem de classificação da coluna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Inputs[Classificar Entrada].Columns[NUMERO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="NUMERO"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[NUMERO]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica as opções de comparação para os dados de caractere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica a ordem de classificação da coluna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Inputs[Classificar Entrada].Columns[ID_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_CLIENTE"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica as opções de comparação para os dados de caractere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica a ordem de classificação da coluna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída]"
+                      isSorted="true"
+                      name="Classificar Saída">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[IDTELEFONE]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[IDTELEFONE]"
+                          name="IDTELEFONE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                              name="SortColumnId">#{Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[IDTELEFONE]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[TIPO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[TIPO]"
+                          name="TIPO">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                              name="SortColumnId">#{Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[TIPO]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[NUMERO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[NUMERO]"
+                          name="NUMERO">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                              name="SortColumnId">#{Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[NUMERO]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[ID_CLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída].Columns[ID_CLIENTE]"
+                          name="ID_CLIENTE"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                              name="SortColumnId">#{Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="TELEFONE"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[TELEFONE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost\sqlexpress.COMPONENTES]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[IDTELEFONE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[IDTELEFONE]"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[IDTELEFONE]"
+                          name="IDTELEFONE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[TIPO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO]"
+                          length="3"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[TIPO]"
+                          name="TIPO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[NUMERO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO]"
+                          length="10"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[NUMERO]"
+                          name="NUMERO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CLIENTE]"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]"
+                          name="ID_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[IDTELEFONE]"
+                          dataType="i4"
+                          name="IDTELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="TIPO" />
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="NUMERO" />
+                        <externalMetadataColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CLIENTE]"
+                          dataType="i4"
+                          name="ID_CLIENTE" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[IDTELEFONE]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[IDTELEFONE]"
+                          name="IDTELEFONE" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO]"
+                          name="TIPO" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO]"
+                          name="NUMERO" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CLIENTE]"
+                          name="ID_CLIENTE" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\MERGE\Tarefa Fluxo de Dados.Paths[Classificar Saída]"
+                  endId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 1]"
+                  name="Classificar Saída"
+                  startId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Outputs[Classificar Saída]" />
+                <path
+                  refId="Package\MERGE\Tarefa Fluxo de Dados.Paths[Classificar Saída1]"
+                  endId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Inputs[Mesclar Entrada 2]"
+                  name="Classificar Saída"
+                  startId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Outputs[Classificar Saída]" />
+                <path
+                  refId="Package\MERGE\Tarefa Fluxo de Dados.Paths[Mesclar Saída 1]"
+                  endId="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  name="Mesclar Saída 1"
+                  startId="Package\MERGE\Tarefa Fluxo de Dados\MERGE.Outputs[Mesclar Saída 1]" />
+                <path
+                  refId="Package\MERGE\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+                  endId="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR.Inputs[Classificar Entrada]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\MERGE\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB1]"
+                  endId="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR.Inputs[Classificar Entrada]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\MERGE\Tarefa Fluxo de Dados"
+          TopLeft="39,52" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275,150"
+          Size="275,193"
+          Id="Package\MERGE"
+          TopLeft="45,126" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\LOOKUP\Tarefa Fluxo de Dados"
+          TopLeft="66,135" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\LOOKUP\Tarefa Executar SQL"
+          TopLeft="75,40" />
+        <EdgeLayout
+          Id="Package\LOOKUP.PrecedenceConstraints[Constraint]"
+          TopLeft="163.75,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="304,232"
+          Size="304,275"
+          Id="Package\LOOKUP"
+          TopLeft="333,75" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\MERGE\Tarefa Fluxo de Dados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES"
+          TopLeft="101,71" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE"
+          TopLeft="397,73" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\MERGE\Tarefa Fluxo de Dados\ORDENAR"
+          TopLeft="108,165" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\MERGE\Tarefa Fluxo de Dados\ORDERNAR"
+          TopLeft="389,171" />
+        <EdgeLayout
+          Id="Package\MERGE\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+          TopLeft="171.25,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MERGE\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB1]"
+          TopLeft="462.75,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\MERGE\Tarefa Fluxo de Dados\MERGE"
+          TopLeft="262,286" />
+        <EdgeLayout
+          Id="Package\MERGE\Tarefa Fluxo de Dados.Paths[Classificar Saída]"
+          TopLeft="175,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128,79"
+              Start="0,0"
+              End="128,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.771144278607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.771144278607"
+                    Point2="0,46.771144278607"
+                    Point3="4,46.771144278607" />
+                  <mssgle:LineSegment
+                    End="124,46.771144278607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124,46.771144278607"
+                    Point2="128,46.771144278607"
+                    Point3="128,50.771144278607" />
+                  <mssgle:LineSegment
+                    End="128,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\MERGE\Tarefa Fluxo de Dados.Paths[Classificar Saída1]"
+          TopLeft="460,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120,73"
+              Start="0,0"
+              End="-120,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2189054726368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.2189054726368"
+                    Point2="0,43.2189054726368"
+                    Point3="-4,43.2189054726368" />
+                  <mssgle:LineSegment
+                    End="-116,43.2189054726368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116,43.2189054726368"
+                    Point2="-120,43.2189054726368"
+                    Point3="-120,47.2189054726368" />
+                  <mssgle:LineSegment
+                    End="-120,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB"
+          TopLeft="245,371" />
+        <EdgeLayout
+          Id="Package\MERGE\Tarefa Fluxo de Dados.Paths[Mesclar Saída 1]"
+          TopLeft="323,328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\MERGE\Tarefa Fluxo de Dados\CLIENTES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\MERGE\Tarefa Fluxo de Dados\TELEFONE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\MERGE\Tarefa Fluxo de Dados\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\LOOKUP\Tarefa Fluxo de Dados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB"
+          TopLeft="101,54" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE"
+          TopLeft="80,174" />
+        <EdgeLayout
+          Id="Package\LOOKUP\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+          TopLeft="179.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB"
+          TopLeft="98,289" />
+        <EdgeLayout
+          Id="Package\LOOKUP\Tarefa Fluxo de Dados.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="178.25,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.06201171875,24.75,188.1240234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\LOOKUP\Tarefa Fluxo de Dados\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\LOOKUP\Tarefa Fluxo de Dados\PROCURA_TELEFONE">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TELEFONE]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\LOOKUP\Tarefa Fluxo de Dados\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
